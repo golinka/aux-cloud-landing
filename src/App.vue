@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <full-page ref="fullpage" :options="options" id="fullpage">
+      <div class="section section--header gradient-home">
+        <MainSection/>
+      </div>
+      <div class="section">
+        <MainSection/>
+      </div>
+    </full-page>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainSection from './sections/01_MainSection.vue'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      options: {
+        menu: '#menu',
+        anchors: ['page1', 'page2', 'page3'],
+        scrollOverflow: true
+      }
+    }
+  },
   components: {
-    HelloWorld
+    MainSection
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
