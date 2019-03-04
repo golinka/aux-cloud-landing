@@ -1,18 +1,34 @@
 <template>
   <div id="app">
     <full-page ref="fullpage" :options="options" id="fullpage">
+      <!-- HOME SECTION -->
       <div class="section section--header gradient-home">
         <MainSection/>
+        <div class="section__next">
+          <div class="next" @click="$refs.fullpage.api.moveSectionDown()">
+            <span>Try it</span>
+            <img src="./assets/images/arrow-down.svg" alt="">
+          </div>
+        </div>
       </div>
-      <div class="section">
-        <MainSection/>
+      <!-- END -->
+      <!-- VIDEO SECTION -->
+      <div class="section section--video gradient-video">
+        <VideoSection/>
+        <div class="section__next">
+          <div class="next" @click="$refs.fullpage.api.moveSectionDown()">
+            <img src="./assets/images/arrow-down.svg" alt="">
+          </div>
+        </div>
       </div>
+      <!-- END -->
     </full-page>
   </div>
 </template>
 
 <script>
 import MainSection from './sections/01_MainSection.vue'
+import VideoSection from './sections/02_VideoSection.vue'
 
 export default {
   name: 'app',
@@ -26,7 +42,8 @@ export default {
     }
   },
   components: {
-    MainSection
+    MainSection,
+    VideoSection
   }
 }
 </script>
