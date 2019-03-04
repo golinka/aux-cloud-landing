@@ -13,8 +13,18 @@
       </div>
       <!-- END -->
       <!-- VIDEO SECTION -->
-      <div class="section section--video gradient-video">
+      <div class="section gradient-video">
         <VideoSection/>
+        <div class="section__next">
+          <div class="next" @click="$refs.fullpage.api.moveSectionDown()">
+            <img src="./assets/images/arrow-down.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- END -->
+      <!-- HOWITWORKS SECTION -->
+      <div class="section gradient-works">
+        <HowSection/>
         <div class="section__next">
           <div class="next" @click="$refs.fullpage.api.moveSectionDown()">
             <img src="./assets/images/arrow-down.svg" alt="">
@@ -29,6 +39,7 @@
 <script>
 import MainSection from './sections/01_MainSection.vue'
 import VideoSection from './sections/02_VideoSection.vue'
+import HowSection from './sections/03_HowSection.vue'
 
 export default {
   name: 'app',
@@ -43,7 +54,8 @@ export default {
   },
   components: {
     MainSection,
-    VideoSection
+    VideoSection,
+    HowSection
   }
 }
 </script>
